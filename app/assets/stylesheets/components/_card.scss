@@ -3,12 +3,17 @@
   display: flex;
   padding-top: 30px;
   justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 .card {
   flex: 1 1 auto;
   margin: 10px;
   border-radius: 1px;
   box-shadow: 0 0 10px #22231c;
+  max-width: 300px;
+  min-width: 300px;
+  transition: 0.2s ease;
 }
 
 .cocktail {
@@ -16,7 +21,7 @@
 }
 
 .card:hover {
-  margin-top: -5px;
+  margin-top: -2px;
 }
 
 .card-user {

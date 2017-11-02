@@ -9,12 +9,21 @@
           </div>
           <div class="ingredients-footer">
             <h3>Ingredients</h3>
-            <p><%= @cocktail.ingredients%></p>
+            <ul class="list">
+            <% @cocktail.doses.each do |dose| %>
+            <li><%= dose.description %> - <%= dose.ingredient.name %></li>
+                <% end %>
+            </ul>
+            <h4>Add an Ingredient</h4>
+            <%= simple_form_for([@cocktail, @dose]) do |f| %>
+                <%= f.input :description, placeholder: "amount of the ingredient" %>
+                <%= f.input :ingredient_id, collection: Ingredient.all %>
+                <%= f.submit %>
+            <% end %>
           </div>
           <div class="show-footer">
             <p>lets get weird, lets get weird, lets get weird</p>
             <div class="controls">
-              <a href="<%= edit_cocktail_path(@cocktail.id) %>"><i class="fa fa-pencil-square-o"></i></a>
               <a href="<%= cocktails_path %>"><i class="fa f fa-arrow-left"></i></a>
             </div>
           </div>

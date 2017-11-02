@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 class="text-center"><%= @cocktail.name %></h2>
+  <div class="cards">
+    <div class="show">
+      <div class="form-body">
+        <div class="card-description">
+        </div>
+        <%= simple_form_for([@cocktail, @dose]) do |f| %>
+            <%= f.input :description, placeholder: "2 cubes" %>
+            <%= f.input :ingredient_id, placeholder: "ice", collection: Ingredient.all %>
+            <%= f.submit %>
+        <% end %>
+        <p class="requiredd">* required</p>
+      </div>
+      <div class="form-footer">
+        <h5></h5>
+        <div class="controls undo-icon">
+          <a href="<%= cocktail_path(@cocktail.id) %>"><i class="fa f fa-undo"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- Code your cards  here -->
+  </div>
+</div>
