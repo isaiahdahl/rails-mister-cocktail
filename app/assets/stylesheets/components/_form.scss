@@ -1,0 +1,20 @@
+.form-body {
+  height: 200px;
+  position: relative;
+  background-size: cover;
+  color: #363731;
+  padding: 20px;
+}
+
+.form-footer {
+  color: #cdcdcd;
+  display: flex;
+  padding: 15px 20px;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.requiredd {
+  color: $light-gray;
+}

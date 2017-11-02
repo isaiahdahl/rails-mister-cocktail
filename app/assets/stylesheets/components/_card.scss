@@ -2,12 +2,17 @@
 .cards {
   display: flex;
   padding-top: 30px;
+  justify-content: center;
 }
 .card {
   flex: 1 1 auto;
   margin: 10px;
   border-radius: 1px;
   box-shadow: 0 0 10px #22231c;
+}
+
+.cocktail {
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('/assets/rudy.png');
 }
 
 .card:hover {
@@ -26,6 +31,7 @@
   background-size: cover;
   color: white;
 }
+
 
 .card-category {
   position: absolute;

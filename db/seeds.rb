@@ -17,3 +17,7 @@ drinks.each do |drink|
   Ingredient.create(name: drink.values.first)
 end
 Ingredient.create(name: "Jägermeister")
+
+Cocktail.create(name: "Jägermeister Rudi")
+Cocktail.create(name: "Jägermeister Fresh Orange")
+Cocktail.create(name: "Jäger Energy")

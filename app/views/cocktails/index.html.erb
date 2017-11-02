@@ -3,21 +3,18 @@
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
     <div class="card">
-      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('images/berlin.jpg')";>
+      <div class="card-body cocktail">
         <span class="card-category"><%= cocktail.name %></span>
         <div class="card-description">
           <p>cocktail description coming soon</p>
         </div>
-        <%= link_to cocktail_path(cocktail.id), class: "card-user avatar avatar-md" do %>
-            <%= image_tag "logo.gif" %>
-        <% end %>
+        <%= image_tag "logo.gif" , class: "card-user avatar avatar-md" %>
       </div>
       <div class="card-footer">
         <p><%= cocktail.updated_at %></p>
         <div class="controls">
-          <a href="#"><i class="fa fa-star"></i></a>
-          <a href="#"><i class="fa fa-heart"></i></a>
-          <a href="#"><i class="fa fa-share"></i></a>
+          <a href="<%= edit_cocktail_path(cocktail.id) %>"><i class="fa fa-pencil-square-o"></i></a>
+          <a href="<%= cocktail_path(cocktail.id) %>"><i class="fa fa-list-ul"></i></a>
         </div>
       </div>
     </div>

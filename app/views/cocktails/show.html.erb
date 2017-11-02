@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 class="text-center"><%= @cocktail.name %></h2>
+  <div class="cards">
+        <div class="show">
+          <div class="show-body shot">
+            <div class="card-description">
+            </div>
+            <%= image_tag "logo.gif" , class: "card-user avatar avatar-md" %>
+          </div>
+          <div class="ingredients-footer">
+            <h3>Ingredients</h3>
+            <p><%= @cocktail.ingredients%></p>
+          </div>
+          <div class="show-footer">
+            <p>lets get weird, lets get weird, lets get weird</p>
+            <div class="controls">
+              <a href="<%= edit_cocktail_path(@cocktail.id) %>"><i class="fa fa-pencil-square-o"></i></a>
+              <a href="<%= cocktails_path %>"><i class="fa f fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+    <!-- Code your cards  here -->
+  </div>
+</div>
