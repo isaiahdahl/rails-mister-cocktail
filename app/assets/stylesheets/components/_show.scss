@@ -14,13 +14,13 @@
 }
 
 .shot {
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/assets/shot.jpeg');
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('shot.jpeg');
   background: cover;
   background-position: bottom;
 }
 
 .new_shot {
-  background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('/assets/shot.jpeg');
+  background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), image-url('shot.jpeg');
   background: cover;
   background-position: bottom;
 }
