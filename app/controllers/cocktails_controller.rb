@@ -10,11 +10,14 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
+    @dose = Dose.new
   end
 
   def create
+    @dose = Dose.new
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
+      render :new
       redirect_to cocktail_path(@cocktail)
     else
       # GO BACK TO THE FORM
