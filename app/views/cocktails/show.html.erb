@@ -2,28 +2,23 @@
   <h2 class="text-center"><%= @cocktail.name %></h2>
   <div class="cards">
         <div class="show">
-          <div class="show-body shot">
-            <div class="card-description">
+          <div class="show-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= cl_image_path show_photo?(@cocktail) %>');">
+             <div class="card-description">
+              </div>
             </div>
-            <%= image_tag "logo.gif" , class: "card-user avatar avatar-md" %>
-          </div>
           <div class="ingredients-footer">
+            <h5><%= @cocktail.description %></h5>
             <h3>Ingredients</h3>
             <ul class="list">
             <% @cocktail.doses.each do |dose| %>
             <li><%= dose.description %> - <%= dose.ingredient.name %></li>
                 <% end %>
             </ul>
-            <h4>Add an Ingredient</h4>
-            <%= simple_form_for([@cocktail, @dose]) do |f| %>
-                <%= f.input :description, placeholder: "amount of the ingredient" %>
-                <%= f.input :ingredient_id, collection: Ingredient.all %>
-                <%= f.submit %>
-            <% end %>
           </div>
           <div class="show-footer">
             <p>lets get weird, lets get weird, lets get weird</p>
             <div class="controls">
+              <a href="<%= edit_cocktail_path(@cocktail.id) %>"><i class="fa fa-pencil-square-o"></i></a>
               <a href="<%= cocktails_path %>"><i class="fa f fa-arrow-left"></i></a>
             </div>
           </div>

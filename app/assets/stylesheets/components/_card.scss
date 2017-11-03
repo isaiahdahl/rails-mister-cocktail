@@ -14,6 +14,7 @@
   max-width: 300px;
   min-width: 300px;
   transition: 0.2s ease;
+  position: relative;
 }
 
 .cocktail {
@@ -71,11 +72,27 @@
 
 .controls {
   display: flex;
+  justify-content: space-between;
+}
+
+.controls-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.controls-right {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .controls i {
   color: #cdcdcd;
   padding: 0px 10px;
+}
+.controls a {
+  color: #cdcdcd;
+  padding: 0px 0px;
+  text-decoration: none;
 }
 
 .controls i:hover {
@@ -85,13 +102,11 @@
 
 .card-footer {
   color: #cdcdcd;
-  display: flex;
   padding: 15px 10px;
   position: relative;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .card-footer p {
   font-size: 12px;
 }
+

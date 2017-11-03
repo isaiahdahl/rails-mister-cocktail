@@ -6,13 +6,15 @@
         <div class="card-description">
         </div>
         <%= simple_form_for(@cocktail) do |f| %>
-            <%= f.input :name %>
-            <%= f.submit %>
+            <%= f.input :name, required: false,  label: 'Name it...', error: 'You cant leave it un-named', placeholder: 'Jager Bomb'  %>
+            <%= f.input :description, label: 'Describe your cocktail...', placeholder: 'All the benefits of achohol and an energy drink!' %>
+            <%= f.input :photo, as: :attachinary, label: 'Upload a photo!' %>
+            <%= f.button :submit, "Add Maddness", class: "btn btn-primary" %>
         <% end %>
         <p class="requiredd">* required</p>
       </div>
       <div class="form-footer">
-        <h5>Click submit to add some ingredients</h5>
+        <h5></h5>
         <div class="controls undo-icon">
           <a href="<%= cocktails_path %>"><i class="fa f fa-undo"></i></a>
         </div>

@@ -17,7 +17,6 @@ class CocktailsController < ApplicationController
     @dose = Dose.new
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
-      render :new
       redirect_to cocktail_path(@cocktail)
     else
       # GO BACK TO THE FORM
@@ -32,7 +31,7 @@ class CocktailsController < ApplicationController
   def update
     @cocktail = Cocktail.find(params[:id])
     @cocktail.update(cocktail_params)
-    redirect_to :back
+    redirect_to cocktail_path(@cocktail)
   end
 
   def destroy
@@ -44,7 +43,7 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :description, :photo)
   end
 
   def find_cocktail

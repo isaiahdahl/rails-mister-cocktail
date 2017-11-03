@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 class="text-center">Name your Masterpiece</h2>
+  <div class="cards">
+    <div class="show">
+      <div class="form-body">
+        <div class="card-description">
+        </div>
+        <%= simple_form_for(@cocktail) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :photo, as: :attachinary %>
+            <%= f.submit %>
+        <% end %>
+        <p class="requiredd">* required</p>
+      </div>
+      <div class="form-footer">
+        <div class="controls undo-icon">
+          <a href="<%= cocktails_path %>"><i class="fa f fa-undo"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- Code your cards  here -->
+  </div>
+</div>

@@ -3,18 +3,22 @@
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
     <div class="card">
-      <div class="card-body cocktail">
+      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= cl_image_path index_photo?(cocktail) %>');">
         <span class="card-category"><%= cocktail.name %></span>
         <div class="card-description">
-          <p>cocktail description coming soon</p>
+          <%= cocktail.description %>
         </div>
-        <%= image_tag "logo.gif" , class: "card-user avatar avatar-md" %>
       </div>
       <div class="card-footer">
-        <p><%= cocktail.updated_at %></p>
         <div class="controls">
-          <a href="<%= edit_cocktail_path(cocktail.id) %>"><i class="fa fa-pencil-square-o"></i></a>
-          <a href="<%= cocktail_path(cocktail.id) %>"><i class="fa fa-list-ul"></i></a>
+          <div class="controls-left">
+            <a href="<%= edit_cocktail_path(cocktail.id) %>"><i class="fa fa-thumbs-up"></i></a>
+            <a href="<%= edit_cocktail_path(cocktail.id) %>"><i class="fa fa-thumbs-down"></i></a>
+          </div>
+          <div class="controls-right">
+            <a href="<%= edit_cocktail_path(cocktail.id) %>"><i class="fa fa-pencil-square-o"></i></a>
+            <a href="<%= cocktail_path(cocktail.id) %>"><i class="fa fa-list-ul"></i></a>
+          </div>
         </div>
       </div>
     </div>
